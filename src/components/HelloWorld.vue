@@ -5,14 +5,20 @@
   <p>{{ doubleCounter }}</p>
   <p>{{ msg2 }}</p>
   <p ref="desc"></p>
+  <!-- Teleport：ModelButton -->
+  <ModelButton/>
 </template>
 
 <script>
 import { computed, onMounted, onUnmounted, reactive, ref, toRefs, watch } from "vue";
+import ModelButton from './ModelButton.vue'
 export default {
   name: "HelloWorld",
   props: {
     msg: String,
+  },
+  components: {
+    ModelButton
   },
   setup() {
     const {counter,doubleCounter} = userCounter()

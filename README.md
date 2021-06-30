@@ -1,10 +1,7 @@
 # chat
 > A Vue.js project
-## Build Setup
 
 # install dependencies
-
-
 
 ## Build Setup
 
