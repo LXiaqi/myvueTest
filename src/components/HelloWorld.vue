@@ -7,18 +7,21 @@
   <p ref="desc"></p>
   <!-- Teleport：ModelButton -->
   <ModelButton/>
+  <Emits @myclick="onEmit()" />
 </template>
 
 <script>
 import { computed, onMounted, onUnmounted, reactive, ref, toRefs, watch } from "vue";
 import ModelButton from './ModelButton.vue'
+import Emits from './Emits.vue'
+
 export default {
   name: "HelloWorld",
   props: {
     msg: String,
   },
   components: {
-    ModelButton
+    ModelButton,Emits
   },
   setup() {
     const {counter,doubleCounter} = userCounter()
@@ -28,6 +31,11 @@ export default {
     const desc = setDesc(counter)
     return { counter,doubleCounter,msg2,desc};
   },
+  methods: {
+    onEmit() {
+      console.log('click me')
+    }
+  }
 };
 // counter 相关
 function userCounter() {
@@ -55,4 +63,5 @@ function setDesc(counter) {
   })
   return desc
 } 
+
 </script>
