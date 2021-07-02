@@ -8,6 +8,8 @@
   <!-- Teleport：ModelButton -->
   <ModelButton/>
   <Emits @myclick="onEmit()" />
+  <!-- 实例方法定义组件 -->
+  <Comp></Comp>
 </template>
 
 <script>
@@ -29,12 +31,13 @@ export default {
     const msg2 = ref('你好，vue3')
     // 使用元素引用
     const desc = setDesc(counter)
-    return { counter,doubleCounter,msg2,desc};
-  },
-  methods: {
-    onEmit() {
+    function onEmit() {
       console.log('click me')
     }
+    return { counter,doubleCounter,msg2,desc,onEmit};
+  },
+  methods: {
+    
   }
 };
 // counter 相关
